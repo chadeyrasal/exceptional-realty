@@ -1,74 +1,43 @@
-/* This is a comment */
-/* CSS Syntax:
-  selector {
-    property: value;
-    property: value;
-  }
-*/
-/* Type selector */
-  p {/* select all <p>*/
-    font-size: 16px;
-    line-height: 1.5em;
-  }
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
 
-  figcaption {
-    font-weight: normal;
-    font-size: 0.75em;
-    line-height: 1.5em;
-    font-family: Georgia, "New Times Roman", serif;
-    /* same as font: normal 0.75em/1.5em Georgia, "New Times Roman", serif;*/
-    color: rgba(127, 21, 25, 1);
-    text-align: right;
-  }
+/*////// GLOBAL //////*/
 
-/* Class selectors (applied to as many elements as you like)*/
+h3 {
+  margin: 0 0 10px;
+}
 
-  .milk-text { /* selects elements with class="milk-text" */
-    font: bold 2.6em Georgia, "New Times Roman", serif;
-    color: white;
-    text-shadow: 0 2px 3px #000;
-  }
+p {
+  font-size: 1em; /* 1 em = 16 px */
+  line-height: 1.5em;
+}
 
-/* ID selectors (apply to one unique element per page) */
+figure {
+  margin: 0 0 10px;
+}
 
-  #logo {
-/*    background: aqua;*/
-  }
+figcaption {
+  font: normal 0.75em/1.5em Georgia, "New Times Roman", serif;
+  color: rgba(127, 21, 25, 1);
+  text-align: right;
+}
 
-/* Descendent selector */
+.milk-text { /* selects elements with class="milk-text" */
+  font: bold 2.6em Georgia, "New Times Roman", serif;
+  color: white;
+  text-shadow: 0 2px 3px #000;
+}
 
-  #logo h1 { /* selcts <h1> if it is inside the id="logo" */
-    font-family: "Clicker script", cursive;
-  }
-
-  #logo h2 { /* selcts <h2> if it is inside the id="logo" */
-    font-family: "Elsie Swash Caps", cursive;
-  }
-
-/* Pseudo Selector */
-
-  #details a:link, #details a:visited {
-    color: black;
-    text-decoration: none;
-  }
-
-  #details a:hover {
-    color: black;
-    text-decoration: underline;
-  }
-
-  #details a:active {
-    color: red;
-    text-decoration: none;
-  }
+/*////// BACKGROUNDS //////*/
 
 /*////// MEDIA //////*/
 
-img, video, audio {
+img,video, audio, iframe, table, form {
+  width: 100%;
   max-width: 100%;
 }
 
-/*////// LAYOUT //////*/
+/*////// FIXES //////*/
 
 * {
   -webkit-box-sizing: border-box;
@@ -76,10 +45,24 @@ img, video, audio {
   box-sizing: border-box;
 }
 
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/*////// LAYOUT //////*/
+
 .wrapper {
   width: 960px;
   margin: 0 auto;
-/*  background: #eee;*/
 }
 
 .col-1 {
@@ -98,15 +81,6 @@ img, video, audio {
   background: #ccc;
 }
 
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  height: 0;
-  line-height: 0;
-}
-
 [class*="col-"] {
   margin-left: 2%;
 }
@@ -115,23 +89,7 @@ img, video, audio {
   margin-left: 0%;
 }
 
-/*////// SECTIONS //////*/
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  z-index: 1;
-}
-
-section {
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-/*////// SECTIONS //////*/
+/*////// SOCIAL //////*/
 
 #social {
   position: fixed;
@@ -146,4 +104,45 @@ section {
   width: 40px;
   height: 40px;
   background: yellow;
+}
+
+/*////// HEADER //////*/
+
+/*////// NAVBAR //////*/
+
+/*////// LOGO //////*/
+
+#logo h1 { /* selcts <h1> if it is inside the id="logo" */
+  font-family: "Clicker script", cursive;
+}
+
+#logo h2 { /* selcts <h2> if it is inside the id="logo" */
+  font-family: "Elsie Swash Caps", cursive;
+}
+
+/*////// MAIN SECTIONS //////*/
+
+section {
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+/*////// DETAILS //////*/
+
+#details div {
+  height: 221px;
+}
+
+#details a:link, #details a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#details a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#details a:active {
+  color: red;
 }
